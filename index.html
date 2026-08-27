@@ -9,6 +9,9 @@
 <meta property="og:description" content="Two-level constrained decoding with meta-tokens: guaranteed-valid robot plans, 67,000× less memory, an 8B open model that beats GPT-4o and Llama-3-70B." />
 <meta property="og:image" content="assets/teaser.png" />
 <meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 <script>
   window.MathJax = {
@@ -39,7 +42,6 @@
 <header class="hero" id="home">
   <h1>Meta-Ctrl</h1>
   <p class="subtitle">Guaranteed Plan Generation by Decoupling<br/>Syntactic and Semantic Constraints</p>
-  <div class="venue">Submitted to CoRL 2026</div>
   <p class="authors">
     <a href="#">Gwen Yidou-Weng</a><sup>*1</sup>, <a href="#">Edward Sun</a><sup>*1</sup>, <a href="#">Tianyi Ma</a><sup>2</sup>,
     <a href="#">Metin Alp Dogan</a><sup>1</sup>, <a href="#">Benjie Wang</a><sup>1</sup>, <a href="#">Allen Peng</a><sup>1</sup>,
@@ -51,26 +53,22 @@
     <span class="eqcontrib"><sup>*</sup>Equal contribution</span>
   </p>
   <div class="btns">
-    <a class="btn" href="https://arxiv.org/abs/2608.22149"><span class="ico">&#128196;</span> Paper (arXiv)</a>
-    <a class="btn secondary" href="#"><span class="ico">&lt;/&gt;</span> Code</a>
+    <a class="btn" href="https://arxiv.org/abs/2608.22149">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+      Paper (arXiv)
+    </a>
+    <a class="btn secondary" href="#">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+      Code
+    </a>
   </div>
 
   <figure class="hero-video">
-    <video autoplay muted loop playsinline controls preload="metadata" poster="assets/teaser.png">
+    <video autoplay muted loop playsinline controls preload="metadata" poster="assets/poster.jpg">
       <source src="assets/final.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-  </figure>
-
-  <figure>
-    <img src="assets/teaser.png" alt="Meta-Ctrl enforces preconditions that the base LM violates." />
-    <figcaption>
-      <b>Meta-Ctrl enforces preconditions that the base LM violates.</b>
-      Task: put dishes in dishwasher; <span class="mono">PUTIN</span> requires holding an object
-      <em>and</em> an open container. The base LM (top) attempts <span class="mono">PUTIN</span> while the
-      dishwasher is closed and the task crashes. Meta-Ctrl (bottom) enforces the action-level
-      precondition, inserting <span class="mono">OPEN(dishwasher)</span>, and the task succeeds.
-    </figcaption>
+    <figcaption>Three-minute overview: the method, benchmark results, and real-robot rollouts.</figcaption>
   </figure>
 </header>
 
@@ -101,16 +99,19 @@
   <p class="section-sub">An exact factorization that makes guaranteed semantic constraints tractable.</p>
   <div class="grid">
     <div class="card">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
       <div class="big">67,000&times;</div>
       <div class="lbl">Less memory</div>
       <p class="desc">Two-level factorization replaces a multiplicative state space (107&nbsp;TB) with an additive one (&lt;2&nbsp;GB), and runs ~1,900&times; faster.</p>
     </div>
     <div class="card">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
       <div class="big">Guaranteed</div>
       <div class="lbl">Valid by construction</div>
       <p class="desc">Every output satisfies the encoded syntactic <em>and</em> semantic constraints&mdash;no hallucinated actions, no precondition or ordering violations.</p>
     </div>
     <div class="card">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
       <div class="big">8B &gt; GPT-4o</div>
       <div class="lbl">Small model, big results</div>
       <p class="desc">On VirtualHome action sequencing, Llama-3-8B goes from 21.3 to <b>88.7</b> task SR&mdash;past every EAI leaderboard entry, including Llama-3-70B and frontier closed models.</p>
@@ -126,6 +127,17 @@
     token-level automaton blows up to ~350M states. Meta-Ctrl factors the problem across
     granularities so each level stays tractable&mdash;exactly.
   </p>
+
+  <figure>
+    <img src="assets/teaser.png" alt="Meta-Ctrl enforces preconditions that the base LM violates." />
+    <figcaption>
+      <b>Meta-Ctrl enforces preconditions that the base LM violates.</b>
+      Task: put dishes in dishwasher; <span class="mono">PUTIN</span> requires holding an object
+      <em>and</em> an open container. The base LM (top) attempts <span class="mono">PUTIN</span> while the
+      dishwasher is closed and the task crashes. Meta-Ctrl (bottom) enforces the action-level
+      precondition, inserting <span class="mono">OPEN(dishwasher)</span>, and the task succeeds.
+    </figcaption>
+  </figure>
 
   <div class="steps">
     <div class="step syntax">
@@ -164,7 +176,7 @@
       </tbody>
     </table>
   </div>
-  <p class="tnote" style="margin-left:auto;margin-right:auto;text-align:center;">
+  <p class="tnote" style="text-align:center;">
     ~1,900&times; faster &middot; ~67,000&times; less memory &middot; ~16.7&times; better fit.
   </p>
 </section>
@@ -179,7 +191,7 @@
   </p>
 
   <div class="eqn-block">
-    <div class="eqn-head">1 &middot; Constrained decoding as probabilistic reasoning (Ctrl-G)</div>
+    <div class="eqn-head"><span class="num">1</span> Constrained decoding as probabilistic reasoning (Ctrl-G)</div>
     $$ p_{\mathrm{LM}}(x_t \mid x_{\lt t}, \alpha)\;\propto\;p_{\mathrm{LM}}(x_t \mid x_{\lt t})\;\cdot\;p_{\mathrm{LM}}(\alpha \mid x_{\le t}) $$
     <p class="eqn-note">
       The second factor is the probability that the <em>full</em> sequence will satisfy the
@@ -190,7 +202,7 @@
   </div>
 
   <div class="eqn-block">
-    <div class="eqn-head">2 &middot; Tractable lookahead via an HMM and a DFA</div>
+    <div class="eqn-head"><span class="num">2</span> Tractable lookahead via an HMM and a DFA</div>
     $$ p_{\mathrm{ctrl}}(x_t \mid x_{\lt t}, \alpha)\;\propto\;p_{\mathrm{LM}}(x_t \mid x_{\lt t})\;\cdot\;p_{\mathrm{HMM}}(\alpha \mid x_{\le t}) $$
     <p class="eqn-note">
       The exact lookahead is intractable, so &alpha; is compiled to a DFA \(\mathcal{D}_\alpha\)
@@ -202,7 +214,7 @@
   </div>
 
   <div class="eqn-block">
-    <div class="eqn-head">3 &middot; Two levels via meta-tokens</div>
+    <div class="eqn-head"><span class="num">3</span> Two levels via meta-tokens</div>
     $$ x \models \alpha \;\iff\; (x \models \gamma)\;\wedge\;(\tau(x) \models \beta) $$
     <p class="eqn-note">
       A parser \(\tau\) maps each syntactically valid token sequence to its sequence of grounded
@@ -214,7 +226,7 @@
   </div>
 
   <div class="eqn-block">
-    <div class="eqn-head">4 &middot; Exact factorization</div>
+    <div class="eqn-head"><span class="num">4</span> Exact factorization</div>
     $$ p(\alpha \mid x_{\le t}) = \sum_{a_l} \underbrace{p(a_l \mid x_{\le t})}_{\text{bridging}}\;\cdot\;\underbrace{p(\gamma \mid x_{\le t}, a_l)}_{\text{syntax (tokens)}}\;\cdot\;\underbrace{p_{\mathrm{meta}}(\beta \mid a_{\le l})}_{\text{semantics (actions)}} $$
     <p class="eqn-note">
       Bijectivity of \(\tau\) makes the semantics term depend only on the completed-action prefix
@@ -351,18 +363,36 @@
 <section id="citation" class="bibtex">
   <h2>Citation</h2>
   <p class="section-sub">If you find Meta-Ctrl useful, please cite the arXiv version:</p>
-  <pre>@article{yidouweng2026metactrl,
+  <div class="bibtex-wrap">
+    <button class="copy-btn" type="button" aria-label="Copy BibTeX">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span>Copy</span>
+    </button>
+    <pre id="bibtex-text">@article{yidouweng2026metactrl,
   title   = {Meta-Ctrl: Guaranteed Plan Generation by Decoupling Syntactic and Semantic Constraints},
   author  = {Yidou-Weng, Gwen and Sun, Edward and Ma, Tianyi and Dogan, Metin Alp and Wang, Benjie and Peng, Allen and Van den Broeck, Guy and Cui, Yuchen},
   journal = {arXiv preprint arXiv:2608.22149},
   year    = {2026}
 }</pre>
+  </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  Meta-Ctrl &middot; <a href="https://arxiv.org/abs/2608.22149">arXiv:2608.22149</a>
+  <span class="foot-brand"><span class="mc">Meta-Ctrl</span></span> &middot;
+  <a href="https://arxiv.org/abs/2608.22149">arXiv:2608.22149</a> &middot; 2026
 </footer>
+
+<script>
+  document.querySelector('.copy-btn').addEventListener('click', function () {
+    var text = document.getElementById('bibtex-text').textContent;
+    var label = this.querySelector('span');
+    navigator.clipboard.writeText(text).then(function () {
+      label.textContent = 'Copied!';
+      setTimeout(function () { label.textContent = 'Copy'; }, 1800);
+    });
+  });
+</script>
 
 </body>
 </html>

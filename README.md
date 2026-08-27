@@ -1,13 +1,13 @@
 # Meta-Ctrl — Project Page
 
-Static project website for **Meta-Ctrl: Guaranteed Plan Generation by Decoupling Syntactic and Semantic Constraints** (submitted to CoRL 2026).
+Static project website for **Meta-Ctrl: Guaranteed Plan Generation by Decoupling Syntactic and Semantic Constraints**.
 
 Plain HTML/CSS, no build step. Open `index.html` locally, or host on GitHub Pages.
 
 ## Files
 - `index.html` — the page
 - `style.css` — styling
-- `assets/` — figures
+- `assets/` — figures, hero video (`final.mp4`), and its poster frame (`poster.jpg`)
 - `.nojekyll` — tells GitHub Pages to serve files as-is (don't run Jekyll)
 
 ## Status
