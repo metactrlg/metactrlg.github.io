@@ -111,7 +111,22 @@ h2 {
 }
 .authors { font-size: 18px; margin: 4px 0 2px; }
 .authors a { color: var(--ink); font-weight: 600; }
-.affil { color: var(--muted); font-size: 15px; margin: 2px 0 24px; }
+.authors sup { font-size: 11px; color: var(--muted); font-weight: 600; }
+.affil { color: var(--muted); font-size: 15px; margin: 2px 0 24px; line-height: 1.6; }
+.affil sup { font-size: 10px; }
+.eqcontrib { font-size: 13px; color: var(--muted); }
+
+/* ---------- hero video ---------- */
+.hero-video { max-width: 860px; margin: 26px auto 0; }
+.hero-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: #000;
+}
 
 /* ---------- buttons ---------- */
 .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 6px; }
