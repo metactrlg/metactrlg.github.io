@@ -11,13 +11,13 @@ Plain HTML/CSS, no build step. Open `index.html` locally, or host on GitHub Page
 - `.nojekyll` — tells GitHub Pages to serve files as-is (don't run Jekyll)
 
 ## Status
-Under double-blind review at CoRL 2026 — kept **anonymous** on purpose
-(`Anonymous Author(s)` / `Affiliation`). No BibTeX or footer yet.
+**Non-anonymous** version of the project page (the anonymous double-blind copy
+lives at `meta-ctrlg/meta-ctrlg.github.io`). Includes authors, arXiv links
+([arXiv:2608.22149](https://arxiv.org/abs/2608.22149)), BibTeX, and footer.
 
-## After acceptance / de-anonymization, edit `index.html`
-- Author names + affiliation
-- Paper / arXiv / Code button links (currently `#` placeholders)
-- Add BibTeX section + footer
+## TODO
+- Code button link (currently `#` placeholder)
+- Author homepage links (currently `#` placeholders)
 
 ## Local preview
 ```bash
