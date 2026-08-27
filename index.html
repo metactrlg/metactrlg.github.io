@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 <script>
   window.MathJax = {
@@ -23,57 +23,36 @@
 </head>
 <body>
 
-<!-- ================= NAV ================= -->
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-brand"><span class="mc">Meta-Ctrl</span></div>
-    <div class="nav-links">
-      <a href="#abstract">Abstract</a>
-      <a href="#method">Method</a>
-      <a href="#formulation">Formulation</a>
-      <a href="#results">Results</a>
-      <a href="#robot">Real Robot</a>
-      <a href="#citation">Citation</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ================= HERO ================= -->
-<header class="hero" id="home">
-  <h1>Meta-Ctrl</h1>
-  <p class="subtitle">Guaranteed Plan Generation by Decoupling<br/>Syntactic and Semantic Constraints</p>
+<!-- ================= MASTHEAD ================= -->
+<header class="masthead">
+  <h1>Meta-Ctrl: Guaranteed Plan Generation by Decoupling Syntactic and Semantic Constraints</h1>
   <p class="authors">
-    <a href="#">Gwen Yidou-Weng</a><sup>*1</sup>, <a href="#">Edward Sun</a><sup>*1</sup>, <a href="#">Tianyi Ma</a><sup>2</sup>,
-    <a href="#">Metin Alp Dogan</a><sup>1</sup>, <a href="#">Benjie Wang</a><sup>1</sup>, <a href="#">Allen Peng</a><sup>1</sup>,
-    <a href="#">Guy Van den Broeck</a><sup>1</sup>, <a href="#">Yuchen Cui</a><sup>1</sup>
+    <a href="https://yidouweng.github.io/">Gwen Yidou-Weng</a><sup>*1</sup>, <a href="https://edwardosunny.github.io/">Edward Sun</a><sup>*1</sup>, <a href="https://suemarsr.github.io/">Tianyi Ma</a><sup>2</sup>,
+    <a href="https://www.linkedin.com/in/metinalpdogan/">Metin Alp Dogan</a><sup>1</sup>, <a href="https://web.cs.ucla.edu/~benjiewang/">Benjie Wang</a><sup>1</sup>, <a href="https://www.linkedin.com/in/ap2005/">Allen Peng</a><sup>1</sup>,
+    <a href="https://web.cs.ucla.edu/~guyvdb/">Guy Van den Broeck</a><sup>1</sup>, <a href="https://yuchencui.cc/">Yuchen Cui</a><sup>1</sup>
   </p>
   <p class="affil">
     <sup>1</sup>University of California, Los Angeles &nbsp;&middot;&nbsp;
-    <sup>2</sup>Michigan State University<br/>
-    <span class="eqcontrib"><sup>*</sup>Equal contribution</span>
+    <sup>2</sup>Michigan State University
   </p>
-  <div class="btns">
-    <a class="btn" href="https://arxiv.org/abs/2608.22149">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-      Paper (arXiv)
-    </a>
-    <a class="btn secondary" href="#">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-      Code
-    </a>
+  <p class="eqcontrib"><sup>*</sup>Equal contribution</p>
+  <div class="links">
+    <a class="btn" href="https://arxiv.org/abs/2608.22149">arXiv</a>
+    <a class="btn" href="#">Code</a>
+    <a class="btn" href="#citation">BibTeX</a>
   </div>
-
-  <figure class="hero-video">
-    <video autoplay muted loop playsinline controls preload="metadata" poster="assets/poster.jpg">
-      <source src="assets/final.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <figcaption>Three-minute overview: the method, benchmark results, and real-robot rollouts.</figcaption>
-  </figure>
 </header>
 
+<figure class="hero-video">
+  <video autoplay muted loop playsinline controls preload="metadata" poster="assets/poster.jpg">
+    <source src="assets/final.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Three-minute overview: the method, benchmark results, and real-robot rollouts.</figcaption>
+</figure>
+
 <!-- ================= ABSTRACT ================= -->
-<section id="abstract" class="abstract">
+<section id="abstract">
   <h2>Abstract</h2>
   <p>
     LLMs generate fluent plans for robots but routinely violate the syntactic and semantic
@@ -93,45 +72,41 @@
   </p>
 </section>
 
-<!-- ================= HIGHLIGHTS ================= -->
-<section id="highlights">
-  <h2>Highlights</h2>
-  <p class="section-sub">An exact factorization that makes guaranteed semantic constraints tractable.</p>
-  <div class="grid">
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
-      <div class="big">67,000&times;</div>
-      <div class="lbl">Less memory</div>
-      <p class="desc">Two-level factorization replaces a multiplicative state space (107&nbsp;TB) with an additive one (&lt;2&nbsp;GB), and runs ~1,900&times; faster.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-      <div class="big">Guaranteed</div>
-      <div class="lbl">Valid by construction</div>
-      <p class="desc">Every output satisfies the encoded syntactic <em>and</em> semantic constraints&mdash;no hallucinated actions, no precondition or ordering violations.</p>
-    </div>
-    <div class="card">
-      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-      <div class="big">8B &gt; GPT-4o</div>
-      <div class="lbl">Small model, big results</div>
-      <p class="desc">On VirtualHome action sequencing, Llama-3-8B goes from 21.3 to <b>88.7</b> task SR&mdash;past every EAI leaderboard entry, including Llama-3-70B and frontier closed models.</p>
-    </div>
-  </div>
+<!-- ================= CONTRIBUTIONS ================= -->
+<section id="contributions">
+  <h2>Contributions</h2>
+  <p>
+    <b>An exact two-level factorization.</b> Meta-tokens decouple token-level syntax from
+    action-level semantics, replacing a multiplicative constraint-state space with an additive
+    one: ~350M DFA states shrink to ~57K, dynamic-programming memory drops from 107&nbsp;TB to
+    1.6&nbsp;GB (~67,000&times; less), and decoding runs ~1,900&times; faster.
+  </p>
+  <p>
+    <b>Guarantees without giving up plan quality.</b> Every output satisfies the encoded
+    syntactic and semantic constraints by construction&mdash;no hallucinated actions, no
+    precondition or ordering violations&mdash;while full-sequence probabilistic lookahead keeps
+    the base LM's plans fluent and goal-directed.
+  </p>
+  <p>
+    <b>Small open models pass frontier models.</b> On VirtualHome action sequencing, Llama-3-8B
+    rises from 21.3 to 88.7 task success rate&mdash;above every entry on the Embodied Agent
+    Interface leaderboard, including Llama-3-70B, GPT-4o, and o1-preview.
+  </p>
 </section>
 
 <!-- ================= METHOD ================= -->
 <section id="method">
   <h2>Method</h2>
-  <p class="section-sub">
-    Plans must satisfy two kinds of constraints. Enforcing them jointly in a single
-    token-level automaton blows up to ~350M states. Meta-Ctrl factors the problem across
-    granularities so each level stays tractable&mdash;exactly.
+  <p>
+    Plans must satisfy two kinds of constraints. Enforcing them jointly in a single token-level
+    automaton blows up to ~350M states; Meta-Ctrl factors the problem across granularities so
+    each level stays tractable&mdash;exactly.
   </p>
 
-  <figure>
+  <figure class="bleed">
     <img src="assets/teaser.png" alt="Meta-Ctrl enforces preconditions that the base LM violates." />
     <figcaption>
-      <b>Meta-Ctrl enforces preconditions that the base LM violates.</b>
+      <b>Figure 1:</b> Meta-Ctrl enforces preconditions that the base LM violates.
       Task: put dishes in dishwasher; <span class="mono">PUTIN</span> requires holding an object
       <em>and</em> an open container. The base LM (top) attempts <span class="mono">PUTIN</span> while the
       dishwasher is closed and the task crashes. Meta-Ctrl (bottom) enforces the action-level
@@ -139,32 +114,24 @@
     </figcaption>
   </figure>
 
-  <div class="steps">
-    <div class="step syntax">
-      <span class="tag">Level 1 &middot; Tokens</span>
-      <h3>Syntactic constraint &gamma;</h3>
-      <p>
-        Valid action names, argument structure and formatting, enforced at the
-        <b>token level</b> with a DFA. Following Ctrl-G, each token is weighted by a tractable
-        estimate of whether the full completion can still satisfy &gamma;&mdash;keeping the hard
-        guarantee while reasoning about the whole remaining sequence, not just the next token.
-      </p>
-    </div>
-    <div class="step semantics">
-      <span class="tag">Level 2 &middot; Meta-tokens</span>
-      <h3>Semantic constraint &beta;</h3>
-      <p>
-        Preconditions, goal achievement and ordering over the evolving world state, enforced at
-        the <b>action level</b> over <em>meta-tokens</em> &mdash; a compact alphabet
-        <span class="mono">{ACT, ID0&hellip;IDk, EOS}</span> of grounded actions, ~132 symbols
-        instead of a 128K-token vocabulary.
-      </p>
-    </div>
-  </div>
+  <p>
+    <b>Level 1 &mdash; syntactic constraint &gamma;, enforced over tokens.</b>
+    Valid action names, argument structure and formatting, enforced at the token level with a
+    DFA. Following Ctrl-G, each token is weighted by a tractable estimate of whether the full
+    completion can still satisfy &gamma;&mdash;keeping the hard guarantee while reasoning about
+    the whole remaining sequence, not just the next token.
+  </p>
+  <p>
+    <b>Level 2 &mdash; semantic constraint &beta;, enforced over meta-tokens.</b>
+    Preconditions, goal achievement and ordering over the evolving world state, enforced at the
+    action level over <em>meta-tokens</em>&mdash;a compact alphabet
+    <span class="mono">{ACT, ID0&hellip;IDk, EOS}</span> of grounded actions, ~132 symbols
+    instead of a 128K-token vocabulary.
+  </p>
 
-  <div class="table-wrap" style="margin-top:28px;">
+  <div class="table-wrap">
     <table>
-      <caption>Why two levels: factoring the joint constraint is both cheaper and a better surrogate (median VirtualHome task, hidden size H=128).</caption>
+      <caption><b>Table 1:</b> Why two levels &mdash; factoring the joint constraint is both cheaper and a better surrogate (median VirtualHome task, hidden size H=128).</caption>
       <thead>
         <tr><th>Quantity</th><th>Monolithic</th><th>Two-level (ours)</th></tr>
       </thead>
@@ -172,7 +139,7 @@
         <tr><td>DFA states</td><td>S&gamma; &times; S&beta; &asymp; 350&nbsp;M</td><td class="best">S&gamma; + S&beta; &asymp; 57&nbsp;K</td></tr>
         <tr><td>Compute</td><td>1,720&nbsp;T</td><td class="best">922&nbsp;G</td></tr>
         <tr><td>DP memory</td><td>107&nbsp;TB</td><td class="best">1.6&nbsp;GB</td></tr>
-        <tr><td>Surrogate fit (&minus;log&nbsp;p / action)</td><td>33.54 <span style="color:var(--muted)">(token HMM)</span></td><td class="best">2.01 <span style="color:var(--muted)">(action HMM)</span></td></tr>
+        <tr><td>Surrogate fit (&minus;log&nbsp;p / action)</td><td>33.54 (token HMM)</td><td class="best">2.01 (action HMM)</td></tr>
       </tbody>
     </table>
   </div>
@@ -184,71 +151,63 @@
 <!-- ================= FORMULATION ================= -->
 <section id="formulation">
   <h2>Formulation</h2>
-  <p class="section-sub">
+  <p>
     A plan must satisfy a token-level syntactic constraint &gamma; and an action-level semantic
-    constraint &beta;. The four steps below take Meta-Ctrl from probabilistic reweighting to an
-    exact two-level factorization.
+    constraint &beta;. Four steps take Meta-Ctrl from probabilistic reweighting to an exact
+    two-level factorization.
   </p>
 
-  <div class="eqn-block">
-    <div class="eqn-head"><span class="num">1</span> Constrained decoding as probabilistic reasoning (Ctrl-G)</div>
+  <p>
+    <b>1. Constrained decoding as probabilistic reasoning (Ctrl-G).</b>
     $$ p_{\mathrm{LM}}(x_t \mid x_{\lt t}, \alpha)\;\propto\;p_{\mathrm{LM}}(x_t \mid x_{\lt t})\;\cdot\;p_{\mathrm{LM}}(\alpha \mid x_{\le t}) $$
-    <p class="eqn-note">
-      The second factor is the probability that the <em>full</em> sequence will satisfy the
-      constraint &alpha; given the current prefix. It assigns zero mass to tokens with no valid
-      completion&mdash;so satisfaction is <b>guaranteed</b>&mdash;and among valid tokens prefers
-      those leading to fluent, high-probability completions.
-    </p>
-  </div>
+    The second factor is the probability that the <em>full</em> sequence will satisfy the
+    constraint &alpha; given the current prefix. It assigns zero mass to tokens with no valid
+    completion&mdash;so satisfaction is <b>guaranteed</b>&mdash;and among valid tokens prefers
+    those leading to fluent, high-probability completions.
+  </p>
 
-  <div class="eqn-block">
-    <div class="eqn-head"><span class="num">2</span> Tractable lookahead via an HMM and a DFA</div>
+  <p>
+    <b>2. Tractable lookahead via an HMM and a DFA.</b>
     $$ p_{\mathrm{ctrl}}(x_t \mid x_{\lt t}, \alpha)\;\propto\;p_{\mathrm{LM}}(x_t \mid x_{\lt t})\;\cdot\;p_{\mathrm{HMM}}(\alpha \mid x_{\le t}) $$
-    <p class="eqn-note">
-      The exact lookahead is intractable, so &alpha; is compiled to a DFA \(\mathcal{D}_\alpha\)
-      and approximated by a trained HMM. Their product is finite-state, admitting a backward
-      dynamic program that returns the lookahead for every prefix at cost
-      \(O(n\cdot|\mathcal{D}|\cdot H^2)\). Composing constraints multiplies DFA sizes
-      (\(|\mathcal{D}_1|\cdot|\mathcal{D}_2|\))&mdash;the bottleneck Meta-Ctrl removes.
-    </p>
-  </div>
+    The exact lookahead is intractable, so &alpha; is compiled to a DFA \(\mathcal{D}_\alpha\)
+    and approximated by a trained HMM. Their product is finite-state, admitting a backward
+    dynamic program that returns the lookahead for every prefix at cost
+    \(O(n\cdot|\mathcal{D}|\cdot H^2)\). Composing constraints multiplies DFA sizes
+    (\(|\mathcal{D}_1|\cdot|\mathcal{D}_2|\))&mdash;the bottleneck Meta-Ctrl removes.
+  </p>
 
-  <div class="eqn-block">
-    <div class="eqn-head"><span class="num">3</span> Two levels via meta-tokens</div>
+  <p>
+    <b>3. Two levels via meta-tokens.</b>
     $$ x \models \alpha \;\iff\; (x \models \gamma)\;\wedge\;(\tau(x) \models \beta) $$
-    <p class="eqn-note">
-      A parser \(\tau\) maps each syntactically valid token sequence to its sequence of grounded
-      actions (<em>meta-tokens</em>, e.g.&nbsp;<span class="mono">Open(dishwasher)</span>);
-      &beta; is a DFA <em>over meta-tokens</em> tracking preconditions, ordering, and goal
-      progress. On the &gamma;-valid support, \(\tau\) is a bijection (one canonical tokenization
-      per action sequence).
-    </p>
-  </div>
+    A parser \(\tau\) maps each syntactically valid token sequence to its sequence of grounded
+    actions (<em>meta-tokens</em>, e.g.&nbsp;<span class="mono">Open(dishwasher)</span>);
+    &beta; is a DFA <em>over meta-tokens</em> tracking preconditions, ordering, and goal
+    progress. On the &gamma;-valid support, \(\tau\) is a bijection (one canonical tokenization
+    per action sequence).
+  </p>
 
-  <div class="eqn-block">
-    <div class="eqn-head"><span class="num">4</span> Exact factorization</div>
+  <p>
+    <b>4. Exact factorization.</b>
     $$ p(\alpha \mid x_{\le t}) = \sum_{a_l} \underbrace{p(a_l \mid x_{\le t})}_{\text{bridging}}\;\cdot\;\underbrace{p(\gamma \mid x_{\le t}, a_l)}_{\text{syntax (tokens)}}\;\cdot\;\underbrace{p_{\mathrm{meta}}(\beta \mid a_{\le l})}_{\text{semantics (actions)}} $$
-    <p class="eqn-note">
-      Bijectivity of \(\tau\) makes the semantics term depend only on the completed-action prefix
-      \(a_{\le l}\), so syntax (token level) and semantics (action level) <b>decouple exactly</b>,
-      communicating only through the bridging term \(p(a_l \mid x_{\le t})\). Each level becomes
-      an independent backward DP&mdash;an <em>additive</em> state space instead of a multiplicative
-      one, the source of the ~1,900&times; compute and ~67,000&times; memory savings.
-    </p>
-  </div>
+    Bijectivity of \(\tau\) makes the semantics term depend only on the completed-action prefix
+    \(a_{\le l}\), so syntax (token level) and semantics (action level) <b>decouple exactly</b>,
+    communicating only through the bridging term \(p(a_l \mid x_{\le t})\). Each level becomes
+    an independent backward DP&mdash;an <em>additive</em> state space instead of a multiplicative
+    one, the source of the ~1,900&times; compute and ~67,000&times; memory savings.
+  </p>
 </section>
 
 <!-- ================= RESULTS ================= -->
 <section id="results">
   <h2>Results</h2>
-  <p class="section-sub">
+  <p>
     On the Embodied Agent Interface, Meta-Ctrl lifts open-weight LMs to match or exceed
     frontier closed models; on WAH-NL it turns an unusable LM into a deployable planner.
   </p>
 
-  <div class="table-wrap">
+  <div class="table-wrap bleed">
     <table>
-      <caption>Embodied Agent Interface &mdash; VirtualHome (VH; n=342 AS, 338 SD) and BEHAVIOR (BEH; n=100 AS, 100 SD). Task SR / Execution SR (%). Leaderboard baselines from Li et&nbsp;al.; each base LM is grouped with its full Meta-Ctrl (&gamma;+&beta;) result. Best per column in green.</caption>
+      <caption><b>Table 2:</b> Embodied Agent Interface &mdash; VirtualHome (VH; n=342 AS, 338 SD) and BEHAVIOR (BEH; n=100 AS, 100 SD). Task SR / Execution SR (%). Leaderboard baselines from Li et&nbsp;al.; each base LM is grouped with its full Meta-Ctrl (&gamma;+&beta;) result. Best per column in bold.</caption>
       <thead>
         <tr>
           <th rowspan="3">Model</th>
@@ -271,9 +230,9 @@
         <tr><td>o1-preview</td><td>65.2</td><td class="best">81.0</td><td>72.5</td><td class="best">91.0</td><td>89.4</td><td class="best">60.0</td><td class="best">93.2</td><td>62.0</td></tr>
         <tr><td>Mistral Large</td><td>78.4</td><td>33.0</td><td>84.6</td><td>50.0</td><td>84.3</td><td>31.0</td><td>92.0</td><td>38.0</td></tr>
         <tr><td>Llama 3 70B Instruct</td><td>59.0</td><td>34.0</td><td>66.6</td><td>42.0</td><td>78.4</td><td>21.0</td><td>87.3</td><td>30.0</td></tr>
-        <tr class="row-base"><td>Llama 3 8B Instruct (base)</td><td>21.3</td><td>10.0</td><td>23.6</td><td>16.0</td><td>48.8</td><td>22.0</td><td>58.0</td><td>29.0</td></tr>
+        <tr><td>Llama 3 8B Instruct (base)</td><td>21.3</td><td>10.0</td><td>23.6</td><td>16.0</td><td>48.8</td><td>22.0</td><td>58.0</td><td>29.0</td></tr>
         <tr class="row-ours"><td>&nbsp;&nbsp;+ Meta-Ctrl (ours)</td><td class="best">88.7</td><td>34.0</td><td class="best">95.7</td><td>64.0</td><td class="best">88.2</td><td>36.0</td><td>92.0</td><td>53.0</td></tr>
-        <tr class="row-base"><td>gpt-oss-20B (base)</td><td>74.4</td><td>40.0</td><td>80.3</td><td>51.0</td><td>72.5</td><td>27.0</td><td>82.2</td><td>36.0</td></tr>
+        <tr><td>gpt-oss-20B (base)</td><td>74.4</td><td>40.0</td><td>80.3</td><td>51.0</td><td>72.5</td><td>27.0</td><td>82.2</td><td>36.0</td></tr>
         <tr class="row-ours"><td>&nbsp;&nbsp;+ Meta-Ctrl (ours)</td><td>86.6</td><td>40.0</td><td>94.1</td><td>90.0</td><td>82.3</td><td>41.0</td><td>86.4</td><td class="best">66.0</td></tr>
       </tbody>
     </table>
@@ -287,14 +246,14 @@
     so less of the constraint can be written into the DFA.
   </p>
 
-  <div class="table-wrap" style="margin-top:36px;">
+  <div class="table-wrap">
     <table>
-      <caption>Probabilistic lookahead vs.&nbsp;hard masking on Llama 3 8B (Task SR / Exec SR, %). Hard masking applies the syntactic DFA as a local mask each step (standard grammar-constrained decoding); Meta-Ctrl adds HMM backward-DP lookahead. Both enforce the same syntactic guarantee.</caption>
+      <caption><b>Table 3:</b> Probabilistic lookahead vs.&nbsp;hard masking on Llama 3 8B (Task SR / Exec SR, %). Hard masking applies the syntactic DFA as a local mask each step (standard grammar-constrained decoding); Meta-Ctrl adds HMM backward-DP lookahead. Both enforce the same syntactic guarantee.</caption>
       <thead>
         <tr><th>Method (Llama 3 8B)</th><th>VH AS</th><th>VH SD</th><th>BEH AS</th><th>BEH SD</th></tr>
       </thead>
       <tbody>
-        <tr class="row-base"><td>Hard masking (&gamma; DFA)</td><td>1.4 / 97.3</td><td>0.0 / 96.0</td><td>12.0 / 20.0</td><td>19.0 / 31.0</td></tr>
+        <tr><td>Hard masking (&gamma; DFA)</td><td>1.4 / 97.3</td><td>0.0 / 96.0</td><td>12.0 / 20.0</td><td>19.0 / 31.0</td></tr>
         <tr class="row-ours"><td>Meta-Ctrl (&gamma;+&beta;, ours)</td><td>88.7 / 95.7</td><td>88.2 / 92.0</td><td>34.0 / 64.0</td><td>36.0 / 53.0</td></tr>
         <tr><td>&Delta; Task SR</td><td class="best">+87.3</td><td class="best">+88.2</td><td class="best">+22.0</td><td class="best">+17.0</td></tr>
       </tbody>
@@ -307,9 +266,9 @@
     probabilistic lookahead recovers task success by +87 to +88 points on VirtualHome.
   </p>
 
-  <div class="table-wrap" style="margin-top:36px;">
+  <div class="table-wrap">
     <table>
-      <caption>Watch-And-Help (WAH-NL), single-agent, n=100, under the LoTa-Bench protocol. SR: full-task success; SSR: subgoal success; Exec: executable-plan rate. External references use different LMs / executors (ballpark context). Same-LM rows are direct comparisons. &dagger;STEP is closed-loop; ours is open-loop.</caption>
+      <caption><b>Table 4:</b> Watch-And-Help (WAH-NL), single-agent, n=100, under the LoTa-Bench protocol. SR: full-task success; SSR: subgoal success; Exec: executable-plan rate. External references use different LMs / executors (ballpark context). Same-LM rows are direct comparisons. &dagger;STEP is closed-loop; ours is open-loop.</caption>
       <thead>
         <tr><th>Method</th><th>Base LM</th><th>SR</th><th>SSR</th><th>Exec</th></tr>
       </thead>
@@ -321,8 +280,8 @@
         <tr><td>LoTa-Bench</td><td>LLaMA-1 65B</td><td>&ndash;</td><td>0.433</td><td>&ndash;</td></tr>
         <tr><td>STEP&dagger;</td><td>(larger)</td><td>0.400</td><td>0.620</td><td>&ndash;</td></tr>
         <tr class="group-row"><td colspan="5">Same LM (Llama 3.1 8B), same evaluator, n=100</td></tr>
-        <tr class="row-base"><td>Raw LM (unconstrained)</td><td>Llama 3.1 8B</td><td>0.000</td><td>0.022</td><td>0.010</td></tr>
-        <tr class="row-base"><td>+ syntax (&gamma;)</td><td>Llama 3.1 8B</td><td>0.000</td><td>0.037</td><td>0.010</td></tr>
+        <tr><td>Raw LM (unconstrained)</td><td>Llama 3.1 8B</td><td>0.000</td><td>0.022</td><td>0.010</td></tr>
+        <tr><td>+ syntax (&gamma;)</td><td>Llama 3.1 8B</td><td>0.000</td><td>0.037</td><td>0.010</td></tr>
         <tr class="row-ours"><td>Meta-Ctrl (ours)</td><td>Llama 3.1 8B</td><td class="best">0.470</td><td class="best">0.705</td><td class="best">1.000</td></tr>
       </tbody>
     </table>
@@ -336,25 +295,25 @@
 
 <!-- ================= REAL ROBOT ================= -->
 <section id="robot">
-  <h2>Real Robot Demonstrations</h2>
-  <p class="section-sub">
-    Meta-Ctrl deployed on a physical XArm7 with a calibrated RealSense RGB-D camera, composing
+  <h2>Real-robot deployment</h2>
+  <p>
+    Meta-Ctrl deployed on a physical xArm 7 with a calibrated RealSense RGB-D camera, composing
     its plans with a Code-as-Policies executor (Molmo + SAM2 grounding, GraspGen grasps).
   </p>
-  <figure>
+  <figure class="bleed">
     <img src="assets/real-tasks.png" alt="Real-robot tabletop tasks executed with Meta-Ctrl plans." />
     <figcaption>
-      Real robot setup with an xArm 7 and deployed tabletop manipulation tasks. Top-row tasks
-      require only pick-and-place; bottom-row tasks require specialized motion primitives
-      (e.g.&nbsp;open door). Eight BEHAVIOR-derived long-horizon tasks are demonstrated; three
-      pick-and-place tasks are evaluated end-to-end over 20 rollouts each.
+      <b>Figure 2:</b> Real robot setup with an xArm 7 and deployed tabletop manipulation tasks.
+      Top-row tasks require only pick-and-place; bottom-row tasks require specialized motion
+      primitives (e.g.&nbsp;open door). Eight BEHAVIOR-derived long-horizon tasks are
+      demonstrated; three pick-and-place tasks are evaluated end-to-end over 20 rollouts each.
     </figcaption>
   </figure>
-  <p class="tnote">
+  <p>
     Meta-Ctrl achieves <b>100% plan validity by construction</b> on all tasks, including the
     multi-step precondition sequences for articulated containers. Its remaining failures occur
     downstream of a valid plan (perception or grasp), which isolates cleanly from planning.
-    Example &mdash; <em>put donut into canister</em>: planning 20/20, perception 17/20,
+    Example&mdash;<em>put donut into canister</em>: planning 20/20, perception 17/20,
     execution 13/17; the unconstrained baseline fails at planning (1/20).
   </p>
 </section>
@@ -362,12 +321,8 @@
 <!-- ================= CITATION ================= -->
 <section id="citation" class="bibtex">
   <h2>Citation</h2>
-  <p class="section-sub">If you find Meta-Ctrl useful, please cite the arXiv version:</p>
   <div class="bibtex-wrap">
-    <button class="copy-btn" type="button" aria-label="Copy BibTeX">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      <span>Copy</span>
-    </button>
+    <button class="copy-btn" type="button" aria-label="Copy BibTeX">Copy</button>
     <pre id="bibtex-text">@article{yidouweng2026metactrl,
   title   = {Meta-Ctrl: Guaranteed Plan Generation by Decoupling Syntactic and Semantic Constraints},
   author  = {Yidou-Weng, Gwen and Sun, Edward and Ma, Tianyi and Dogan, Metin Alp and Wang, Benjie and Peng, Allen and Van den Broeck, Guy and Cui, Yuchen},
@@ -379,17 +334,15 @@
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <span class="foot-brand"><span class="mc">Meta-Ctrl</span></span> &middot;
-  <a href="https://arxiv.org/abs/2608.22149">arXiv:2608.22149</a> &middot; 2026
+  Meta-Ctrl &middot; <a href="https://arxiv.org/abs/2608.22149">arXiv:2608.22149</a> &middot; 2026
 </footer>
 
 <script>
   document.querySelector('.copy-btn').addEventListener('click', function () {
-    var text = document.getElementById('bibtex-text').textContent;
-    var label = this.querySelector('span');
-    navigator.clipboard.writeText(text).then(function () {
-      label.textContent = 'Copied!';
-      setTimeout(function () { label.textContent = 'Copy'; }, 1800);
+    var btn = this;
+    navigator.clipboard.writeText(document.getElementById('bibtex-text').textContent).then(function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
     });
   });
 </script>
