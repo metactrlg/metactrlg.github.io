@@ -41,8 +41,17 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
   font-weight: 600;
   line-height: 1.28;
   letter-spacing: -.01em;
-  margin: 0 auto 26px;
+  margin: 0 auto 12px;
   max-width: 780px;
+}
+.venue {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 22px;
 }
 .authors { font-size: 16.5px; margin: 0 0 4px; line-height: 1.75; }
 .authors a { color: var(--ink); }
